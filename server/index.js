@@ -11,7 +11,7 @@ const Server = http.createServer(app)
 
 mongoose.connect('mongodb://localhost/agenda')
 
-app.use(express.static('client'))
+app.use(express.static('../client'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use('/', Routing)

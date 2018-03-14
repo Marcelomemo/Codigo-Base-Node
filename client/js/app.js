@@ -50,17 +50,18 @@ class EventManager {
                     end: end
                 }
                 $.post(url, ev, (response) => {
-                    alert("Evento fue creado satisfactoriamente")
-                    this.inicializarFormulario()
                     let evn = {
                         id: response,
                         title: title,
                         start: start,
                         end: end
                     }
+                    alert("Evento fue creado satisfactoriamente")
+                    this.inicializarFormulario()
                     $('.calendario').fullCalendar('renderEvent', evn)
                     document.getElementById("allDay").checked = false
                     $('.timepicker, #end_date').removeAttr("disabled")
+
                 })
 
             } else {
@@ -70,7 +71,7 @@ class EventManager {
     }
 
     inicializarFormulario() {
-        $('#start_date, #titulo, #end_date').val('');
+        $('#start_date, #titulo, #end_date, #start_hour, #end_hour' ).val('');
         $('#start_date, #end_date').datepicker({
             dateFormat: "yy-mm-dd"
         });

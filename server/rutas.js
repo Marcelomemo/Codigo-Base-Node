@@ -6,18 +6,18 @@ const Users = require('./modeluser.js')
 Router.get('/newUser', function(req, res) {
     let usuario = new Users({
         userId: Math.floor(Math.random() * 50),
-        correo: "marcelo@correo.com",
+        usuario: "marcelo",
         password: "12345",
         nombres: "Marcelo Narvaez",
         fecha_nacimiento: "1978-11-05"
     })
 
     usuario.save(function(err) {
-        if (error) {
+        if (err) {
             res.status(500)
             res.json(err)
         }
-        res.send("Registro guardado")
+        res.json("Registro guardado")
     })
 })
 
@@ -26,7 +26,7 @@ Router.post('/login', function(req, res) {
     let usuario = req.body.user
     let password = req.body.pass
 
-    Users.findOne({correo: usuario}).exec(function(err, doc){
+    Users.findOne({usuario: usuario}).exec(function(err, doc){
         if (err) {
             res.status(500)
             res.json(err)
