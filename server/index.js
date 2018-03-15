@@ -11,10 +11,17 @@ const Server = http.createServer(app)
 
 mongoose.connect('mongodb://localhost/agenda')
 
-app.use(express.static('../client'))
+app.use(express.static('./client'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
+
+app.get('/',function(request,res){
+	res.sendFile('./client/index.html');
+})
+
+app.use(express.static(__dirname + './client'));
 app.use('/', Routing)
+
 
 Server.listen(PORT, function() {
   console.log('Servidor esta escuchando por el puerto: ' + PORT)

@@ -26,18 +26,19 @@ Router.post('/login', function(req, res) {
     let usuario = req.body.user
     let password = req.body.pass
 
-    Users.findOne({usuario: usuario}).exec(function(err, doc){
+    Users.findOne({usuario: usuario, password: password}).exec(function(err, doc){
         if (err) {
             res.status(500)
             res.json(err)
         }else{
-            if(doc.password === password){
+            if(doc != null){
                 res.json('Validado')
             }else{
                 res.json('Usuario o contraseña son incorrectos')
             }
         }
     })
+
 })
 
 Router.post('/logout', function(req, res) {
