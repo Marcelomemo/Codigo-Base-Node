@@ -1,0 +1,18 @@
+Instruciones para acceder al proyecto NodeJS
+
+
+1. Iniciar "mongod" en consola.
+
+2. Ubicarse en la carpeta "Codigo Base Node/server".
+
+3. Desde la terminal colocar el comando "node index.js" para iniciar el servicio web.
+
+4. Una vez cargada la pagina y si es la primera vez que hacede al proyecto debe abrir la siguente url para registrar le usuario : "http://localhost:3000/newUser".
+	Credenciales del Usuario son:
+	Usuario: marcelo
+	Contraseña: 12345
+
+5. En el browser del navegador colocar la siguiente url: "http://localhost:3000". Esta se direcionara al Login del proyecto.
+
+6. Loguearse con las credenciales del paso cinco, dentro de la agenda ya se pueden realizar las operaciones como de cargar eventos, nuevo evento, modificar eventos y eliminar eventos.
+

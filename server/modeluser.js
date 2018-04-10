@@ -1,6 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
 	userId: { type: Number, required: true, unique: true},
@@ -10,6 +10,6 @@ let UserSchema = new Schema({
 	fecha_nacimiento: { type: Date, required: true}
 })
 
-let UserModel = mongoose.model('usuarios', UserSchema)
+let UserModel = mongoose.model('usuarios', UserSchema);
 
 module.exports = UserModel
